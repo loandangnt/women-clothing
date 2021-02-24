@@ -1,4 +1,7 @@
-# Analyze E-commerce Customers' Reviews on Women Clothings
+# Topic Modeling Customers' Text Reviews on Women Clothings
+## *What does customers complain about the product?*
+![banner](./ft1.jpg)
+
 ## Overview
 This project aims to **extract meaning from customer' text reviews** to identify what issues that customers' dislike on a particular product. Retailers can use the insights to prioritize improvement on the most frequently complained issues. The model segments negative review texts (low rating average, <3), and will give us an idea of what customers complain about the product on a review/purchase.
 
@@ -6,6 +9,7 @@ I use topic modeling techniques using Latent Dirichlet Analysis LDA. Ultimately,
 
 Further improvement areas includes a significant amount of revision: modifying the vocabulary to include acronyms and multi-word phrases, removing nonsensical topics, conducting parameter search, and comparing with other models.
 
+An **interactive version** of the final model is hosted on Heroku. Check it out [here](https://hate-speech-predictor.herokuapp.com/)!
 
 ### Business Questions
 
