@@ -3,21 +3,22 @@
 ![banner](./ft1.jpg)
 
 ## Overview
-This project aims to **extract meaning from customer' text reviews** to identify what issues that customers' dislike on a particular product. Retailers can use the insights to prioritize improvement on the most frequently complained issues. The model segments negative review texts (low rating average, <3), and will give us an idea of what customers complain about the product on a review/purchase.
+This project aims to **extract meaning from customer' text reviews** to identify what issues that customers dislike on a particular product. Retailers can use the insights to prioritize improvement on the most frequently complaining issues. The model produces a probability weights coresponding to each buckets of issues for each negative review text (a negative review text in this analysis is defined as low rating lower than 3 in a scale of 5). Out of the **k** buckets of issues extracted from the model, each text will be assigned an issue that have the highest probability weight.
 
-I use topic modeling techniques using Latent Dirichlet Analysis LDA. Ultimately, verifying unsupervising model is extreme difficult, especially in the NLP area. Current evaluation of topical quality rely heavily experts eaminations, i.e. human eyes validation involved. Based on human reading and validation, this model achieved 77% accuracy. This performance is due to the model's inability to 'understand' the ironicallity and different style of different customers, and such a narrow subjects of this dataset, making it challenging to avoid topical overlap.
+I use topic modeling techniques using Latent Dirichlet Analysis LDA. Ultimately, validating unsupervising model is extreme difficult, especially in the NLP. Current evaluations of topical quality rely heavily on experts eaminations, i.e. human eyes validation involved. Based on human reading and validation, this model achieved 57% accuracy, and 77% accuracy on 90% percentile of probability weight. This performance is due to the model's inability to 'understand' the ironicallity and different style of different customers, and such a narrow subjects of this dataset, making it challenging to avoid topical overlap.
 
 Further improvement areas includes a significant amount of revision: modifying the vocabulary to include acronyms and multi-word phrases, removing nonsensical topics, conducting parameter search, and comparing with other models.
 
 An **interactive version** of the final model is hosted on Heroku. Check it out [here](https://hate-speech-predictor.herokuapp.com/)!
 
 ### Business Questions
+There are many possible exploratory text analysis, supervised and unsupervised model techiniques on this dataset. Some business questions in scope of this analysis are:
 
-1. Based on review and rating, what do customers like and dislike about clothing **BY CATEGORY, BY DEPARTMENT**?
-Solutions: EDA using Wordcloud, visualization, statistics
+1. Based on review and rating, what do customers like and dislike about a clothing item? Are there any difference between **category** and **department**?
+Solutions: Word count TF-IDF, Bag of words, Wordcloud visualization.
 
-2. How to prioritize which **PROBLEM** to improve for each clothing product?
-Solution: Topic modeling using LDA
+2. How to **prioritize which issue for improvement** for a clothing item?
+Solution: Topic modeling using LDA on text reviews.
 
 3. How to choose which **PRODUCT** to improve first?
 Solution: Rating statistics, LDA output model accuracy (more accurate prediction is prioritized)
@@ -48,10 +49,14 @@ This dataset includes 23486 rows and 10 feature variables. Each row corresponds 
 
 
 ### LDA Topic Modeling
-#
+#### Data Pre-processing
+#### Modeling
+#### Choosing optimal k number of topics
+#### Model output visualization
+#### Model output evaluation
  
 ### Apply LDA Model Result
-
+#### *How to choose which product to adress first?*
 ### Conclusion
 
 ### Next Steps
