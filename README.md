@@ -1,6 +1,10 @@
 # Topic Modeling Customers' Text Reviews on Women Clothings
 ## *What does customers complain about the product?*
 ![banner](./ft1.jpg)
+<p align="center">
+  <img width="900" height="540" src="./ft1.jpg" class="img-responsive">
+</p>
+
 
 ## Overview
 This project aims to **extract meaning from customer' text reviews** to identify what issues that customers dislike on a particular product. Retailers can use the insights to prioritize improvement on the most frequently complaining issues. The model produces a probability weights coresponding to each buckets of issues for each negative review text (a negative review text in this analysis is defined as low rating lower than 3 in a scale of 5). Out of the **k** buckets of issues extracted from the model, each text will be assigned an issue that have the highest probability weight.
