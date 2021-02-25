@@ -25,6 +25,9 @@ Solution: Topic modeling using LDA on text reviews.
 3. How to choose which **PRODUCT** to improve first?
 Solution: Rating statistics, LDA output model accuracy (more accurate prediction is prioritized)
 
+
+### High Level Approach
+
 ### Data Sourcing
 This is a Kaggle dataset. Link: https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews:
 Its nine supportive features offer a great environment to parse out the text through its multiple dimensions. Because this is real commercial data, it has been anonymized, and references to the company in the review text and body have been replaced with “retailer”.
@@ -45,7 +48,6 @@ This dataset includes 23486 rows and 10 feature variables. Each row corresponds 
 
 ### Data Understanding
 
-![](./rating_stats_by_class_dept.html)
 
 
 
