@@ -1,9 +1,7 @@
 # Topic Modeling Customers' Text Reviews on Women Clothings
 ## *What does customers complain about the product?*
 ![banner](./ft1.jpg)
-<p align="center">
-  <img width="900" height="540" src="./ft1.jpg" class="img-responsive">
-</p>
+
 
 
 ## Overview
