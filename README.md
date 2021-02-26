@@ -47,6 +47,7 @@ This dataset includes 23486 rows and 10 feature variables. Each row corresponds 
 |10. Class Name| Categorical name of the product class name.
 
 ### Data Understanding
+https://nbviewer.jupyter.org/github/loandangnt/women-clothing/blob/master/women_clothing_data_exploration.ipynb
 
 
 
