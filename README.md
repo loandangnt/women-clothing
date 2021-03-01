@@ -92,11 +92,11 @@ There are interesting differences in rating statistics between clothing classes:
 
 ![image](./visualization/joyplot_rating_class.png)
 
-Rating pattern in differs between different classes. This pattern confirms the differences in rating statistics between classes as we have observed in the bubble chart above.
+Rating pattern differs between classes. This pattern confirms the differences in rating statistics between classes as we have observed in the bubble chart above.
 
 Knowing which classes perform worse and which better is just one part of the journey. Noting the difference, it is worth looking at customer insights into each classes of clothing. The goal is to address what make the difference, i.e. where the issues are. Which products within lesser performers contribute the most the overall statistics, and what are wrong with those products. Again, the topic modeling applied to each review item can help answer the questions.
-![image](./visualization/wordcloud_class_first9.png)
 
+![image](./visualization/wordcloud_class_first9.png)
 ![image](./visualization/wordcloud_class_last9.png)
 
 Here, we explore further in Text field with a separate view for each Class Name. The several wordclouds show that the overlaping problem exists in subsets of negative reviews data. This can pose a challenge for topic modeling accuracy. Noting this challenge, we can compare these wordclouds with model output to partly evaluate its accuracy.
