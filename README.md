@@ -11,8 +11,6 @@ I use topic modeling techniques using Latent Dirichlet Analysis LDA. Ultimately,
 
 Further improvement areas includes a significant amount of revision: modifying the vocabulary to include acronyms and multi-word phrases, removing nonsensical topics, conducting parameter search, and comparing with other models.
 
-An **interactive version** of the final model is hosted on Heroku. Check it out [here](https://hate-speech-predictor.herokuapp.com/)!
-
 ### Business Questions
 There are many possible exploratory text analysis, supervised and unsupervised model techiniques on this dataset. Some business questions in scope of this analysis are:
 
@@ -32,9 +30,8 @@ Solution: Rating statistics, LDA output model accuracy (more accurate prediction
 
 ### Data Sourcing
 This is a Kaggle dataset. Link: https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews:
-Its nine supportive features offer a great environment to parse out the text through its multiple dimensions. Because this is real commercial data, it has been anonymized, and references to the company in the review text and body have been replaced with “retailer”.
 
-This dataset includes 23486 rows and 10 feature variables. Each row corresponds to a customer review, and includes the variables:
+This dataset includes **23486 rows and 10 feature variables**. Each row corresponds to a customer review, and includes the variables:
  Column Name | Description |
 |-|-|
 |1. Clothing ID| Integer Categorical variable that refers to the specific piece being reviewed.
@@ -51,7 +48,7 @@ This dataset includes 23486 rows and 10 feature variables. Each row corresponds 
 ### Data Understanding
 https://nbviewer.jupyter.org/github/loandangnt/women-clothing/blob/master/women_clothing_data_exploration.ipynb
 
-**1. Based on review and rating, what do customers like and dislike about a clothing item?**
+#### 1. Based on review and rating, what do customers like and dislike about a clothing item?
 
 
 ![image](./visualization/wc_pos_vs_neg.png)
@@ -66,7 +63,7 @@ There are interesting pattern in the negative reviews, compared to the positive 
 ![image](./visualization/top_words.png)
 
 
-![image](./visualization/vent_diagram.png)
+![word_venn](./visualizations/ven-diagram.png)
 
 There are overlaped words between positive reviews and negative reviews. Out of total **5460** words in cleaned negative reviews, there are **3861** words overlap with those in cleaned positive reviews (**70.7%**). The bar charts also show that **both customers who are satisfied and not satisfied with the bought item care** about certain aspects, such as the fit, size, color, fabric, etc.
 
@@ -75,7 +72,7 @@ This insight strenthens my aprroach to dive depper into only the negative review
 Therefore, my next step of the analysis is the topic modeling task using Latent Class Allocation LDA and Semantic Class Analysis. I then decide which model yields the most quality topics and map the model result back to the original dataframe.
 
 
-**2. Are there any difference in rating and customers' preferences between category and department?**
+#### 2. Are there any difference in rating and customers' preferences between category and department?
 
 ![image](./visualization/rating_statistics_by_class_dept.png)
 
