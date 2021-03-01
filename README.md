@@ -63,7 +63,7 @@ There are interesting pattern in the negative reviews, compared to the positive 
 ![image](./visualization/top_words.png)
 
 
-![word_venn](./visualizations/ven-diagram.png)
+![image](./visualizations/venn_diagram.png)
 
 There are overlaped words between positive reviews and negative reviews. Out of total **5460** words in cleaned negative reviews, there are **3861** words overlap with those in cleaned positive reviews (**70.7%**). The bar charts also show that **both customers who are satisfied and not satisfied with the bought item care** about certain aspects, such as the fit, size, color, fabric, etc.
 
