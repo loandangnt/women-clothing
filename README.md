@@ -63,6 +63,17 @@ There are interesting pattern in the negative reviews, compared to the positive 
 
 - The word **expect, picture, photo** appear in the negative groups. This means the gap between what they expect from the information online and what they actually experience when receiving the item was large enough to let they down. No matter what the issues are, retailers should provide information (size, product infor, real images) that match as much as possible to avoid disatisfaction. This is a common pitfall of apparel e-commerce. Customers are ultimately attracted to gorgeous images with good price online and make purchase, but then they leave bad comments and never come back. This actually the worst for any retailers who want to build long-term business. 
 
+![image](./visualization/top_words.png)
+
+
+![image](./visualization/vent_diagram.png)
+
+There are overlaped words between positive reviews and negative reviews. Out of total **5460** words in cleaned negative reviews, there are **3861** words overlap with those in cleaned positive reviews (**70.7%**). The bar charts also show that **both customers who are satisfied and not satisfied with the bought item care** about certain aspects, such as the fit, size, color, fabric, etc.
+
+This insight strenthens my aprroach to dive depper into only the negative reviews and analyze if there are any cluster of issues (groups of issues) that seller can improve their product. Learning and improving from failures has been a good approach to compete in the market.
+
+Therefore, my next step of the analysis is the topic modeling task using Latent Class Allocation LDA and Semantic Class Analysis. I then decide which model yields the most quality topics and map the model result back to the original dataframe.
+
 
 **2. Are there any difference in rating and customers' preferences between category and department?**
 
@@ -84,7 +95,7 @@ Knowing which classes perform worse and which are better is only one part of the
 
 The goal is to address what make the difference, i.e. where the issues are. Which products within lesser performers contribute the most the overall statistics, and what are wrong with those products. Again, the topic modeling applied to each review item can help answer the questions.
 
-![image](./visualization/top_words.png)
+
 ### LDA Topic Modeling
 #### Data Pre-processing
 #### Modeling
