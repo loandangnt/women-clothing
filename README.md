@@ -16,7 +16,7 @@ Further improvement areas includes a significant amount of revision: modifying t
 ### Business Questions
 There are many possible exploratory text analysis, supervised and unsupervised model techiniques on this dataset. Some business questions in scope of this analysis are:
 
-1. Based on review and rating, what do customers like and dislike about a clothing item?
+1. Based on review and rating, what do customers **like and dislike** about a clothing item?
 Solutions: descriptive statistics.
 
 2. Regarding the above preferences, are there any difference between **category** and **department**?
@@ -31,9 +31,9 @@ Solution: Rating statistics, LDA output model accuracy (more accurate prediction
 
 ### High Level Approach
 **1. Data Preprocessing**:
-- Remove unused characters/words (punctuations, tag, special characters and digits, stopwords)
+- Clean: remove unused characters/words (punctuations, tag, special characters and digits, stopwords)
 - Tokenize: split text sentences into single words.
-- POS tagging (an intermediate step to include only types of words that are needed, which are NOUN, VERB, ADJ)
+- POS tag (an intermediate step to include only types of words that are needed, which are NOUN, VERB, ADJ)
 - Lemmatize: changes variation of words into its root (e.g. *go, went, gone, going* into *go*).
 
 **2. Data Exploratory Analysis**: answer the first two business questions in the Business Question section above and to give an idea why the topic modeling task could be valuable.
@@ -68,23 +68,25 @@ https://nbviewer.jupyter.org/github/loandangnt/women-clothing/blob/master/women_
 #### 1. Based on review and rating, what do customers like and dislike about a clothing item?
 ![image](./visualization/wc_pos_vs_neg_title.png)
 
-From the visuals, we can see that people generally don't mention what make them like from the product, but express the general look or how they feel about the purchase in general. For example, top words in positive reviews are gorgegous, comfortable, comfy, fit, soft.
+From the visuals, we can see that people generally don't mention what make them like. They only express the **general look** or **how it feels** in general. For example, top words in **positive reviews** are *gorgegous, comfortable, comfy, fit, soft*.
 
-In contrast, negative reviews mention directly in the Title what make them disatisfied with their purchase. Top keywords mention largely about **fit, small, large, fabric, color, quality, etc.**
+In contrast, **negative reviews** mention directly in the Title what make the buyers disatisfied with their purchase. Top keywords are largely about **fit, small, large, fabric, color, quality, etc.**
 
-In addition, the word **picture, expect** appear in the top 50 common words of negative reviews' title. This means the gap between what buyers expected from the information online and what they actually experienced when receiving the item was large enough to make they so disappointed.
+In addition, the word **picture, expect** appear in the top 50 common words. This means the gap between **what buyers expected** from the information online and **what they actually experienced** when receiving the item was large enough to make they so disappointed.
 
-Given this insight, retailers are better provide precise information including size, product details, real images that matches as much as possible to the reality to avoid disatisfaction. This is a common challenge of the apparel e-commerce industry. Customers are ultimately attracted to gorgeous images online. They make purchase and get disappointed, then, leave negative comments and are likely to never come back! This actually the worst for any retailers who want to build a long-term business.
+Given this insight, retailers are better provide precise information including *sizing information, product details, real images* that matches as much as possible to the reality to avoid disatisfaction. This is a common challenge in the apparel e-commerce industry. THe problem is that customers are ultimately attracted to gorgeous images online. They make purchase and get disappointed, then, leave negative comments and are likely to never come back! This actually the worst for any retailers who want to build a long-term business.
 
-Let's take a look at the Review Text field to analyze more details.
+So, let's take a look at the Review Text field to analyze more details.
 
 
 ![image](./visualization/venn_diagram.png)
+
 There are overlaped words between positive reviews and negative reviews. Out of total **5,460** words in cleaned negative reviews, there are **3,861** words overlap with those in cleaned positive reviews (**70.7%**). Let's take a closer look at the overlapping issue.
 
 
 ![image](./visualization/top_words.png)
-Both groups care about some common areas, such as how the they fit, color, if size is as expected, the material and fabric quality, other details of the clothing item including sleeve, waist, arm, button, chest, and hip.
+
+Both groups care about some common areas, such as how the they **fit, color, size, material, fabric**, and other details of the clothing item including **sleeve, waist, arm, button, chest, and hip**.
 
 Another interesting pattern in the negative reviews is that the word **small, fabric, material** seems to be more common issues in negative texts than in positive ones. These are things that easily let people down when they receive the items.
 
@@ -96,34 +98,33 @@ Therefore, my next step of the analysis is the topic modeling task using Latent 
 #### 2. Are there any difference in rating and customers' preferences between category and department?
 
 ![image](./visualization/rating_statistics_by_class_dept.png)
+
 There are interesting differences in rating statistics between clothing classes:
 
 - Group 1: Classes in **Dresses** and **Tops** are the most frequently bought and also received a large number of bad reviews. That was why rating average of these classes/departments are lower than overall rating average (lower than 4.19, except *Fine Gauge*). They are big bubbles on the lower right corner of the above graph.
 
 - Group 2: **Bottoms** products including *Jeans, Pants, Shorts, Skirts*, and **Intimate** products including *Layering and Lounge* have higher average rating, and lower rating standard deviation. This is understandable because they have smaller customer base, thus, smaller range of opinions than the first group.
 
-- Group 3: The third group are small classes that have high rating average and high rating standard deviation. They are **Jackets** and Intimates products including *Intimates, Sleep, Legwear*. As they have very small number of reviews, rating values can be influenced by some extreme opinions and vary more than other classes.
+- Group 3: The third group are small classes that have high rating average and high rating standard deviation. They are **Jackets** and **Intimate** products including *Intimates, Sleep, Legwear*. As they have very small number of reviews, rating values can be influenced by some extreme opinions and vary more than other classes.
 
 
 ![image](./visualization/joyplot_rating_class.png)
+
 Rating pattern differs between classes. This pattern confirms the differences in rating statistics between classes as we have observed in the bubble chart above.
 
-Knowing which classes perform worse and which better is just one part of the journey. Noting the difference, it is worth looking at customer insights into each classes of clothing. The goal is to address what make the difference, i.e. where the issues are. Which products within lesser performers contribute the most the overall statistics, and what are wrong with those products. Again, the topic modeling applied to each review item can help answer the questions.
+Noting the difference, it is worth looking at customer insights into each classes of clothing. Knowing which classes perform worse and which better is just one part of the journey. The goal is to address what make the difference, i.e. where the issues are; which products within lesser performers contribute the most the overall statistics; what are wrong with those products. Again, the topic modeling applied to each review item can help answer the questions.
 
 
 ![image](./visualization/wordcloud_class_first9.png)
 ![image](./visualization/wordcloud_class_last9.png)
+
 Here, we explore further in the Review Text field with a separate view for each Class Name. The several wordclouds show that the overlaping problem exists in subsets of negative reviews data. Top issues are two of the four issues: **size, fit, color, fabric**. This can pose a challenge for topic modeling accuracy. Noting this challenge, we can compare these wordclouds with model output to partly evaluate its accuracy.
 
-Besides, Each Class Name has each unique issues. For example, customers buying **Intimates, Swim** products concern about *cup*, buying **Dresses, Pants, Shorts** are sensitive about *waist*, buying **Outerwear** cares about the *button*, buying **Lounge** could be disatisfied with issues like *wash, soft,thin*, buying **Sweaters, Fine Gauge, Jackets** cares about *sleeve*, buying **Skirts** cares about *hip, waist*, buying **Sleep** products have issues *robe, thin* issues, buying **Trend** products cares about the fit and details such as *bust, waist, cut*, buying **Jeans, Legwear** would be more satisfied if the item is better at the *waist, stretch, wash*, buying **Layering** cares about *arm*. 
+Besides, each Class Name has each unique issues. For example, customers buying **Intimates, Swim** products concern about *cup*, buying **Dresses, Pants, Shorts** are sensitive about *waist*, buying **Outerwear** cares about the *button*, buying **Lounge** could be disatisfied with issues like *wash, soft,thin*, buying **Sweaters, Fine Gauge, Jackets** cares about *sleeve*, buying **Skirts** cares about *hip, waist*, buying **Sleep** products have issues *robe, thin* issues, buying **Trend** products cares about the fit and details such as *bust, waist, cut*, buying **Jeans, Legwear** would be more satisfied if the item is better at the *waist, stretch, wash*, buying **Layering** cares about *arm*. 
 
 ### LDA Topic Modeling
 ### Algorithm Understanding
 **1. Latent Class Allocation (LDA)**
-Intuition
-LDA (short for Latent Dirichlet Allocation) is an unsupervised machine- learning model that takes documents as input and finds topics as output. The model also says in what percentage each document talks about each topic (probability weight).
-A topic is represented as a weighted list of words. An example of a topic is shown below:
-1ower*0,2|rose*0,15|plant*0,09|...
     
 **2. Latent Semantic Analysis (LSA)**
 **3. Non-Negative Matrix Factorization (NMF)**
