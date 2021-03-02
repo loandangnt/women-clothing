@@ -107,11 +107,6 @@ There are interesting differences in rating statistics between clothing classes:
 
 - Group 3: The third group are small classes that have high rating average and high rating standard deviation. They are **Jackets** and **Intimate** products including *Intimates, Sleep, Legwear*. As they have very small number of reviews, rating values can be influenced by some extreme opinions and vary more than other classes.
 
-
-![image](./visualization/joyplot_rating_class.png)
-
-Rating pattern differs between classes. This pattern confirms the differences in rating statistics between classes as we have observed in the bubble chart above.
-
 Noting the difference, it is worth looking at customer insights into each classes of clothing. Knowing which classes perform worse and which better is just one part of the journey. The goal is to address what make the difference, i.e. where the issues are; which products within lesser performers contribute the most the overall statistics; what are wrong with those products. Again, the topic modeling applied to each review item can help answer the questions.
 
 
