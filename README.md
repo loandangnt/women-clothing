@@ -79,11 +79,11 @@ Given this insight, retailers are better provide precise information including s
 Let's take a look at the Review Text field to analyze more details.
 
 
-
+![image](./visualization/venn_diagram.png)
 There are overlaped words between positive reviews and negative reviews. Out of total **5,460** words in cleaned negative reviews, there are **3,861** words overlap with those in cleaned positive reviews (**70.7%**). Let's take a closer look at the overlapping issue.
 
-![image](./visualization/top_words.png)
 
+![image](./visualization/top_words.png)
 Both groups care about some common areas, such as how the they fit, color, if size is as expected, the material and fabric quality, other details of the clothing item including sleeve, waist, arm, button, chest, and hip.
 
 Another interesting pattern in the negative reviews is that the word **small, fabric, material** seems to be more common issues in negative texts than in positive ones. These are things that easily let people down when they receive the items.
@@ -96,7 +96,6 @@ Therefore, my next step of the analysis is the topic modeling task using Latent 
 #### 2. Are there any difference in rating and customers' preferences between category and department?
 
 ![image](./visualization/rating_statistics_by_class_dept.png)
-
 There are interesting differences in rating statistics between clothing classes:
 
 - Group 1: Classes in **Dresses** and **Tops** are the most frequently bought and also received a large number of bad reviews. That was why rating average of these classes/departments are lower than overall rating average (lower than 4.19, except *Fine Gauge*). They are big bubbles on the lower right corner of the above graph.
@@ -105,16 +104,15 @@ There are interesting differences in rating statistics between clothing classes:
 
 - Group 3: The third group are small classes that have high rating average and high rating standard deviation. They are **Jackets** and Intimates products including *Intimates, Sleep, Legwear*. As they have very small number of reviews, rating values can be influenced by some extreme opinions and vary more than other classes.
 
-![image](./visualization/joyplot_rating_class.png)
 
+![image](./visualization/joyplot_rating_class.png)
 Rating pattern differs between classes. This pattern confirms the differences in rating statistics between classes as we have observed in the bubble chart above.
 
 Knowing which classes perform worse and which better is just one part of the journey. Noting the difference, it is worth looking at customer insights into each classes of clothing. The goal is to address what make the difference, i.e. where the issues are. Which products within lesser performers contribute the most the overall statistics, and what are wrong with those products. Again, the topic modeling applied to each review item can help answer the questions.
 
+
 ![image](./visualization/wordcloud_class_first9.png)
-
 ![image](./visualization/wordcloud_class_last9.png)
-
 Here, we explore further in the Review Text field with a separate view for each Class Name. The several wordclouds show that the overlaping problem exists in subsets of negative reviews data. Top issues are two of the four issues: **size, fit, color, fabric**. This can pose a challenge for topic modeling accuracy. Noting this challenge, we can compare these wordclouds with model output to partly evaluate its accuracy.
 
 Besides, Each Class Name has each unique issues. For example, customers buying **Intimates, Swim** products concern about *cup*, buying **Dresses, Pants, Shorts** are sensitive about *waist*, buying **Outerwear** cares about the *button*, buying **Lounge** could be disatisfied with issues like *wash, soft,thin*, buying **Sweaters, Fine Gauge, Jackets** cares about *sleeve*, buying **Skirts** cares about *hip, waist*, buying **Sleep** products have issues *robe, thin* issues, buying **Trend** products cares about the fit and details such as *bust, waist, cut*, buying **Jeans, Legwear** would be more satisfied if the item is better at the *waist, stretch, wash*, buying **Layering** cares about *arm*. 
