@@ -78,7 +78,7 @@ Given this insight, retailers are better provide precise information including s
 
 Let's take a look at the Review Text field to analyze more details.
 
-![image](./visualizations/venn_diagram.png)
+
 
 There are overlaped words between positive reviews and negative reviews. Out of total **5,460** words in cleaned negative reviews, there are **3,861** words overlap with those in cleaned positive reviews (**70.7%**). Let's take a closer look at the overlapping issue.
 
