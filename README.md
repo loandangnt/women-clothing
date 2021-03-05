@@ -128,8 +128,23 @@ Besides, each Class Name has each unique issues. For example, customers buying *
 #### Modeling
 #### Choosing optimal k number of topics
 #### Model output visualization
+![image](./visualization/topic_percentage.png)
+
+Size is a prominant issue. Therefore, for products being complained small/large in size, the seller should provide more precise sizing information to customers and guarantee that the products are made with appropiate size as listed.
+
+
+![image](./visualization/topic_by_class_name.png)
+
+Compare LDA model output to WordCloud exploratory analysis to see if the LDA topic modeling makes sense.
+
 #### Model output evaluation
- 
+After going through some sample and validate the reliability of the model prediction by 'eyes'. 27/57 reviews are correctly labeled (57%). For cases with dominant topic percentage (weight) is >= 0.9, 10/13 cases are correctly labeled (77%).
+
+I also find out that there are some cases where the model predict incorrectly:\
+    - Reviewers mention both on some aspects that they are and aren't satisfied with. The model picks keywords that were positively mentioned.\
+    - People don't really express their opinion directly. They can use comparison, metaphors to say to indirectly express what they mean. For example, 'the dress looks like a nightgown on me' (i.e. sizing issue - the dress is too big for this customer).\
+    - Sentences using negative form with **not** is also a challenge for the model to correctly articulate what the customers really mean.\
+    - Some other cases are ones that show disappointment indirectly or in a ironic way. I haven't found any solution for these problem and would accept model inaccuracy caused by these problems.
 ### Apply LDA Model Result
 #### *How to choose which product to adress first?*
 ### Conclusion
