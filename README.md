@@ -9,8 +9,6 @@ The model produces a probability weight map coresponding to buckets of issue **f
 
 I run 2 most popular used topic modeling algorithm and choose Latent Dirichlet Allocation (LDA) as the best quality model for this analysis. Ultimately, validating unsupervising model is extreme difficult, especially in NLP. Current evaluations of topical quality rely heavily on experts eaminations, i.e. human eyes validation involved. Based on human reading and validation, this model achieved 57% accuracy, and 77% accuracy on 90% percentile of probability weight. This performance is due to the model's inability to 'understand' the ironicallity and different style of languege expression of different customers, as well as such a narrow subject of this dataset, making it challenging to avoid topical overlapping.
 
-Further improvement areas includes a significant amount of revision: modifying the vocabulary to include negation forms, acronyms and multi-word phrases, reducing topical overlapping, removing nonsensical topics, conducting parameter search, and comparing with other techniques.
-
 ### Business Questions
 There are many possible exploratory text analysis, supervised and unsupervised model techiniques on this dataset. Some business questions in scope of this analysis are:
 
@@ -155,8 +153,25 @@ What we want is to select products receiving a certain number of negative review
 On the dataset, a product would receive a average of 19.5 reviews (Rating_count), and have an average rating value of 4.19 (Rating_mean). Here, I'm going to choose products that have Rating_count < 19.5 and Rating_mean < 4.19.
 ![image](./visualization/choose_product.png)
 
-There are total of 84 products that needed to be on the priority list with topic results. Here is a demo showing issues of a product:
+There are total of 84 products that needed to be on the priority list with topic results. For example:
+Product ID 1087 has Rating_count = 129 (it recevied 129 reviews), R_mean = 3.75 (it had Rating average of 3.75), and also received 29 negative reviews (Rating <=2). The topic modeling ouput provide issues information as follow:
 
-### Conclusion
+|dominant_topic_theme |Clothing_ID
+|-|-|
+|Fabric/fit/body	|13
+|Color/fabric	|8
+|Color/material	|8
+|Fit/fabric/price	|6
+|Shoulder/arm/length/wide/fabric	|5
+|Size/small/large	|5
+|Wash/dry/fit/stretch/fabric	|2
+This provide a summary view about issues related to a product, which helps buyers better/quicker to response to customer feedbacks.
 
 ### Next Steps
+Further improvement for topic model accuracy includes:
+- Modifying the vocabulary to include negation forms, acronyms and multi-word phrases
+- Deal with topical overlapping
+- Removing nonsensical topics
+- Conduct parameter search
+- Compare with more topic modeling/text summarization techniques.
+Use model to predict a new negative review text.
