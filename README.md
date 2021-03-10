@@ -2,8 +2,6 @@
 ## *What does customers complain about the product?*
 ![banner](./visualization/ft1.jpg)
 
-
-
 ## Overview
 This project aims to **extract meaning from customer' text reviews** to identify what issues that customers dislike on a particular product. Retailers can use the insights to prioritize improvement on the most frequently complaining issues. 
 
@@ -117,17 +115,8 @@ Here, we explore further in the Review Text field with a separate view for each 
 
 Besides, each Class Name has each unique issues. For example, customers buying **Intimates, Swim** products concern about *cup*, buying **Dresses, Pants, Shorts** are sensitive about *waist*, buying **Outerwear** cares about the *button*, buying **Lounge** could be disatisfied with issues like *wash, soft,thin*, buying **Sweaters, Fine Gauge, Jackets** cares about *sleeve*, buying **Skirts** cares about *hip, waist*, buying **Sleep** products have issues *robe, thin* issues, buying **Trend** products cares about the fit and details such as *bust, waist, cut*, buying **Jeans, Legwear** would be more satisfied if the item is better at the *waist, stretch, wash*, buying **Layering** cares about *arm*. 
 
-### LDA Topic Modeling
-### Algorithm Understanding
-**1. Latent Class Allocation (LDA)**
-    
-**2. Latent Semantic Analysis (LSA)**
-**3. Non-Negative Matrix Factorization (NMF)**
-
-#### Data Pre-processing
-#### Modeling
-#### Choosing optimal k number of topics
-#### Model output visualization
+### Topic Modeling
+#### Final model output
 ![image](./visualization/topic_percentage.png)
 
 Size is a prominant issue. Therefore, for products being complained small/large in size, the seller should provide more precise sizing information to customers and guarantee that the products are made with appropiate size as listed.
@@ -137,7 +126,7 @@ Size is a prominant issue. Therefore, for products being complained small/large 
 
 Compare LDA model output to WordCloud exploratory analysis to see if the LDA topic modeling makes sense.
 
-#### Model output evaluation
+#### Model output validation
 After going through some sample and validate the reliability of the model prediction by 'eyes'. 27/57 reviews are correctly labeled (57%). For cases with dominant topic percentage (weight) is >= 0.9, 10/13 cases are correctly labeled (77%).
 
 I also find out that there are some cases where the model predict incorrectly:\
@@ -147,6 +136,27 @@ I also find out that there are some cases where the model predict incorrectly:\
     - Some other cases are ones that show disappointment indirectly or in a ironic way. I haven't found any solution for these problem and would accept model inaccuracy caused by these problems.
 ### Apply LDA Model Result
 #### *How to choose which product to adress first?*
+- Brainstorming: 
+Question: What are top purchase (top 20%) and negatively reviewed (Rating average (mean) < 3). Analyze what issues with these products, and send reccommendation to retailers on how they can improve their product.
+
+
+I found out that there should be a method to choose which products need to be prioritized for improvement. I thought of:
+
++ Method 1: Choose top 80% received largest number of reviews (nlargest_count) (dataset 1), then get products with average rating < 3.
+This is unreasonable because the rating_mean of dataset 1 is around 4.19 (std ~ 0.3). There really is only one product from dataset 1 that has average rating <3.
+
+
++ Method 2: Choose products with average rating < 3, then get top 80% received largest number of reviews (nlargest_count). This is also unfeaseable because the final selected products still have very small number of reviews (largely, from 1 to 2 reviews).
+
+SO, we need another method:
+
+What we want is to select products receiving a certain number of negative reviews. These number of reviews should be large enough to show that retailers needs to care for improvement, but not some personal negative reviews (a very small number of negative reviews in comparison with the total number of reviews/total number of purchases).
+
+On the dataset, a product would receive a average of 19.5 reviews (Rating_count), and have an average rating value of 4.19 (Rating_mean). Here, I'm going to choose products that have Rating_count < 19.5 and Rating_mean < 4.19.
+![image](./visualization/choose_product.png)
+
+There are total of 84 products that needed to be on the priority list with topic results. Here is a demo showing issues of a product:
+
 ### Conclusion
 
 ### Next Steps
