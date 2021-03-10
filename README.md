@@ -169,10 +169,12 @@ Product ID 1087 has Rating_count = 129 (it recevied 129 reviews), R_mean = 3.75 
 This provide a summary view about issues related to a product, which helps buyers better/quicker to response to customer feedbacks.
 
 ### Next Steps
-Further improvement for topic model accuracy includes:
+1. Further improvement for topic model accuracy includes:
 - Modifying the vocabulary to include negation forms, acronyms and multi-word phrases
 - Deal with topical overlapping
 - Removing nonsensical topics
 - Conduct parameter search
 - Compare with more topic modeling/text summarization techniques.
-Use model to predict a new negative review text.
+
+2. Use model to predict a new negative review text.
+
