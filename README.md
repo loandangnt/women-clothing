@@ -165,6 +165,7 @@ Product ID 1087 has Rating_count = 129 (it recevied 129 reviews), R_mean = 3.75 
 |Shoulder/arm/length/wide/fabric	|5
 |Size/small/large	|5
 |Wash/dry/fit/stretch/fabric	|2
+
 This provide a summary view about issues related to a product, which helps buyers better/quicker to response to customer feedbacks.
 
 ### Next Steps
