@@ -1,5 +1,5 @@
 # Topic Modeling Customers' Text Reviews on Women Clothings
-## *What does customers complain about the product?*
+## *What do customers complain about the product?*
 ![banner](./visualization/ft1.jpg)
 
 ## Overview
